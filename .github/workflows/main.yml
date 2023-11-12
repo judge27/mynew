@@ -10,14 +10,15 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3 
+
       - name: "Login To Docker Hub"
         run: docker login --username ${{ secrets.docker_username }} --password ${{ secrets.docker_password }}
 
-      -name: "Build Docker Image"
+      - name: "Build Docker Image"
         run: docker build -t ${{ secrets.docker_username }}/dart .
 
-      -name: "Pushing To Docker Hub"
-        run" docker push ${{ secrets.docker_username }}/dart      
+      - name: "Pushing To Docker Hub"
+        run: docker push ${{ secrets.docker_username }}/dart      
     
 
 
