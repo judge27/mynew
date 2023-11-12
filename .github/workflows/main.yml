@@ -15,10 +15,10 @@ jobs:
         run: docker login --username ${{ secrets.docker_username }} --password ${{ secrets.docker_password }}
 
       - name: "Build Docker Image"
-        run: docker build -t ${{ secrets.docker_username }}/dart .
+        run: docker build -t ${{ secrets.docker_username }}/judge .
 
       - name: "Pushing To Docker Hub"
-        run: docker push ${{ secrets.docker_username }}/dart      
+        run: docker push ${{ secrets.docker_username }}/judge      
     
 
 
